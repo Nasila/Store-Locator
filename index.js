@@ -2,7 +2,7 @@ const http = require('http');
 const mongoose = require('mongoose');
 const express = require('express');
 const PORT = 6000;
-const uri = "mongodb://localhost:27017/7ElevenStores";
+// const uri = "mongodb://localhost:27017/7ElevenStores";
 const path = require('path');
 const bodyParser = require('body-parser');
 const app = express();
@@ -14,6 +14,9 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(express.static(path.join(__dirname, "public")));
+
+const uri = "mongodb+srv://admin:xyz5555@7elevenstores.mirma.mongodb.net/7ElevenStores?retryWrites=true&w=majority";
+
 
 mongoose.connect(uri, {
     useCreateIndex: true,
